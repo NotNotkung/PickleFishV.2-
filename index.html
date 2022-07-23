@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="images/fish_logo.png">
+    <title>PickleFish</title>
+    <!-- Tailwind CSS -->
+    <link rel="stylesheet" href="build.css">
+
+    <!-- Icons -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Mitr&display=swap');
+
+        * {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Mitr', sans-serif;
+            background-image: linear-gradient(to right, white, rgba(212, 7, 212, 0.242), rgba(255, 166, 0, 0.5));
+        }
+
+        #comment-card,
+        .fila-box {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 16px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .fila-box {
+            border-radius: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div id="title-content">
+        <nav class="p-5 shadow-sm md:flex md:items-center md:justify-between bg-white rounded-lg">
+            <div class="flex justify-between items-center">
+                <span class="text-2xl font-[Popins] cursor-pointer">
+                    <img class="h-10 inline" src="images/fish_logo.png" alt="">
+                    <a href="https://pickledfish.netlify.app/"
+                        class="text-transparent text-2xl font-bold bg-clip-text bg-gradient-to-r from-purple-400 to-orange-600 p-1">PickleFish</a>
+                </span>
+                <span class="text-3xl cursor-pointer mx-2 md:hidden block">
+                    <ion-icon name="menu-outline" onclick="Menu(this)"></ion-icon>
+                </span>
+            </div>
+
+            <ul class="md:flex md:items-center z-50 md:z-auto
+         md:static absolute  w-full left-0 md:w-auto
+         md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top[-400px] transition-all bg-white
+         ease-in duration-300 
+         " id="list">
+                <li class="mx-4 my-6 md:my-0"><a href="#title-content"
+                        class="cursor-pointer text-xl p-2 rounded-md  hover:text-white hover:bg-violet-500 duration-500">Home</a>
+                </li>
+                <li class="mx-4 my-6 md:my-0"><a href="#members"
+                        class="cursor-pointer text-xl p-2 rounded-md hover:text-white hover:bg-violet-500 duration-500">Members</a>
+                </li>
+                <li class="mx-4 my-6 md:my-0"><a href="#comment"
+                        class="cursor-pointer text-xl p-2 rounded-md hover:text-white hover:bg-violet-500 duration-500">Others</a>
+                </li>
+            </ul>
+        </nav>
+
+
+        <div class="reletive max-w-5xl mx-auto pt-20 sm:pt-24 lg:pt-32" id="text-title">
+            <h1 class="text-slate-900 font-extrabold text-3xl text-center sm:text-5xl lg:text-6xl">PickleFish With
+                Riceberry
+                <h1
+                    class="text-transparent  bg-clip-text bg-gradient-to-r from-blue-400 to-orange-600 font-extrabold text-3xl text-center sm:text-5xl lg:text-5xl mt-2">
+                    ปลาส้มแปลงร่าง
+                </h1>
+                <p class="text-slate-900 font-extralight text-lg text-center mt-10 max-w-5xl">ปลาส้มแปลงร่าง
+                    ปลาส้มที่ใช้ข้าวไรซ์เบอร์รี่มาทำแทนการใช้ข้าวเหนียวแบบธรรมดา เพื่อแก้ปัญหาภายในชุมชน
+                    อันเนื่องมาจากภายในชุมชมมีปลาล้นตลาดรวมถึงมีนาข้าวไรซ์เบอร์รี่ จึงนำ 2
+                    อย่างนี้มารวมกันเพื่อแปรรูปเป็น <a
+                        href="https://www.google.com/search?q=%E0%B8%9B%E0%B8%A5%E0%B8%B2%E0%B8%AA%E0%B9%89%E0%B8%A1&oq=%E0%B8%9B%E0%B8%A5%E0%B8%B2%E0%B8%AA%E0%B9%89%E0%B8%A1&aqs=edge..69i57j69i59j0i19l4j69i60l3.1813j0j9&sourceid=chrome&ie=UTF-8"
+                        target="_blank" class="text-orange-500 underline">ปลาส้ม</a></p>
+        </div>
+
+
+        <!-- Get Started Button -->
+        <div class="mt-14 flex justify-center">
+            <a href="#fila-map"
+                class="cursor-pointer border-2  border-black text-black p-4 rounded-xl hover:text-white hover:bg-black duration-300">Get
+                Started</a>
+        </div>
+
+
+
+        <!-- Video -->
+        <div class="flex justify-center">
+            <video class="mt-5" src="images/previewVideo.mp4" controls></video>
+        </div>
+
+        <!-- Text under video -->
+        <div class="flex justify-center">
+            <p class="bg-violet-500  mt-3 p-2 rounded-lg text-white border-2 border-violet-800 ">
+                วิดีโอขั้นตอนการทำปลาส้ม(ข้าวไรซ์เบอร์รี่)</p>
+        </div>
+
+        <!-- Title of Fila Map -->
+        <div class="flex justify-center">
+            <p class="bg-white mt-10 p-2 rounded-lg border-2 border-slate-700 text-3xl">FILA MAP</p>
+        </div>
+        <!-- FILA MAP -->
+        <section class="fila-map grid grid-cols-1 md:grid-cols-4 gap-6 my-10" id="fila-map">
+            <div class="fila-box bg-white">
+                <h1 class="text-center text-xl"><span class="text-orange-500">F </span><span>FACT-ข้อเท็จจริง</span>
+                </h1>
+                <li class="text-center">จากการสำรวจ พบว่า<b class="text-orange-500">ปลาล้นตลาด</b> ทำให้ปลาเน่าเสีย</li>
+                <li class="text-center">ในชุมชน<b class="text-orange-500">มีข้าวไรซ์เบอร์รี่</b>อยู่จำนวนมาก
+                    จึงนำมาประยุกต์ใช้กับปลาที่ล้นตลาด</li>
+            </div>
+            <div class="fila-box bg-white">
+                <h1 class="text-center text-xl"><span class="text-orange-500">I </span><span>INOVATION
+                        IDEA-ความคิดสร้างนวัตกรรม</span></h1>
+                <li class="text-center text-orange-500">ทำปลาส้มไรซ์เบอร์รี่</li>
+                <li class="text-center">ช่วยแก้ปัญหาปลาล้นตลาด และ สนับสนุนข้าวไรซ์เบอร์รี่ของคนในชุมชน</li>
+            </div>
+            <div class="fila-box bg-white">
+                <h1 class="text-center text-xl"><span class="text-orange-500">L </span><span>LEARNING ISSUE -
+                        สิ่งที่ต้องเรียนรู้</span></h1>
+                <li class="text-center text-orange-500">วิทยาศาสตร์</li>
+                <li class="text-center text-orange-500">คณิตศาสตร์</li>
+                <li class="text-center text-orange-500">คอมพิวเตอร์</li>
+                <li class="text-center text-orange-500">ภาษาไทย <b class="font-thin text-black">และ</b> ภาษาอังกฤษ</li>
+            </div>
+            <div class="fila-box bg-white">
+                <h1 class="text-center text-xl"><span class="text-orange-500">A
+                    </span><span>ACTION-ขั้นตอนการปฎิบัติ</span></h1>
+                <p class="text-center">1.ลงพื้นที่ สังเกต สำรวจ วิเคราะห์ปัญหา</p>
+                <p class="text-center">2.ออกแบบนวัตกรรม</p>
+                <p class="text-center">3.สร้างนวัตกรรม</p>
+                <p class="text-center">4.ชิมรสชาติ</p>
+                <p class="text-center">5.นำไปใช้จริง / ต่อยอด</p>
+            </div>
+        </section>
+
+        <!-- Ingredients Cards -->
+        <div class="flex justify-center">
+            <div class="py-4 px-8 shadow-lg rounded-lg mt-10 mb-3 bg-white w-80 ">
+                <div>
+                    <h2 class="text-gray-800 text-2xl font-semibold text-center">วัตถุดิบในการทำปลาส้ม</h2>
+                </div>
+            </div>
+        </div>
+        <!-- component -->
+        <div class="flex justify-center mt-12 items-center overflow-auto">
+            <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2"
+                id="ingredients">
+
+                <!-- Start Card -->
+                <div class="bg-blue-600 pt-1 px-2 bg-gradient-to-b from-blue-400 to-blue-500 rounded-xl shadow-lg w-52">
+                    <div class="flex justify-center">
+                        <div class="flex justify-center p-4 bg-blue-400 ring-2 ring-blue-300 rounded-lg shadow-xl w-32">
+                            <img src="images/fish.jpeg" alt="">
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <p class="text-white font-semibold">ปลาจีน</p>
+                        <div class="flex justify-between mt-2">
+                            <p class="text-gray-200">1 กิโลกรัม</p>
+                        </div>
+                    </div>
+                </div>
+                <!--End Card -->
+                <!-- Start Card -->
+                <div
+                    class="bg-blue-600 pt-1 px-2 bg-gradient-to-b from-purple-400 to-purple-500 rounded-xl shadow-lg w-52">
+                    <div class="flex justify-center">
+                        <div
+                            class="flex justify-center p-4 bg-purple-400 ring-2 ring-violet-300 rounded-lg shadow-xl w-32">
+                            <img src="images/riceberry.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <p class="text-white font-semibold">ข้าวไรซ์เบอร์รี่</p>
+                        <div class="flex justify-between mt-2">
+                            <p class="text-gray-200">3 ขีด</p>
+                        </div>
+                    </div>
+                </div>
+                <!--End Card -->
+                <!-- Start Card -->
+                <div
+                    class="bg-blue-600 pt-1 px-2 bg-gradient-to-b from-yellow-300 to-yellow-500 rounded-xl shadow-lg w-52">
+                    <div class="flex justify-center">
+                        <div
+                            class="flex justify-center p-4 bg-yellow-400 ring-2 ring-yellow-300 rounded-lg shadow-xl w-32">
+                            <img src="images/gralic.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <p class="text-white font-semibold">กระเทียม</p>
+                        <div class="flex justify-between mt-2">
+                            <p class="text-gray-200">2 ขีด</p>
+                        </div>
+                    </div>
+                </div>
+                <!--End Card -->
+                <!-- Start Card -->
+                <div
+                    class="bg-blue-600 pt-1 px-2 bg-gradient-to-b from-orange-500 to-orange-700 rounded-xl shadow-lg w-52">
+                    <div class="flex justify-center">
+                        <div
+                            class="flex justify-center p-4 bg-yellow-400 ring-2 ring-orange-300 rounded-lg shadow-xl w-32">
+                            <img src="images/sugar.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <p class="text-white font-semibold">น้ำตาลทราย</p>
+                        <div class="flex justify-between mt-2">
+                            <p class="text-gray-200">2 ช้อนโต๊ะ</p>
+                        </div>
+                    </div>
+                </div>
+                <!--End Card -->
+                <!-- Start Card -->
+                <div class="bg-blue-600 pt-1 px-2 bg-gradient-to-b from-white to-red-500 rounded-xl shadow-lg w-52">
+                    <div class="flex justify-center">
+                        <div class="flex justify-center p-4 bg-red-400 ring-2 ring-red-300 rounded-lg shadow-xl w-32">
+                            <img src="images/salt.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <p class="text-white font-semibold">เกลือ</p>
+                        <div class="flex justify-between mt-2">
+                            <p class="text-gray-200">2 ช้อนโต๊ะ</p>
+                        </div>
+                    </div>
+                </div>
+                <!--End Card -->
+
+            </div>
+        </div>
+    </div>
+
+    <section class="title-members flex justify-center">
+        <div class="py-4 px-8 shadow-lg rounded-lg mt-10 mb-10 bg-white w-80 ">
+            <div>
+                <h2 class="text-gray-800 text-2xl font-semibold text-center">รายชื่อสมาชิกกลุ่ม</h2>
+                <p class="mt-2 text-gray-600 text-center">ปลาส้มแปลงร่าง ชั้นมัธยมศึกษาปีที่ 2/1 <a
+                        href="http://nt.ac.th"
+                        class="cursor-pointer  text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-yellow-400">โรงเรียนนาทวีวิทยาคม</a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Members Section -->
+    <section class="members mt-5 grid grid-cols-1 mx-7 md:grid-cols-3 gap-x-5" id="members">
+
+    </section>
+
+    <!-- Comment Section -->
+    <h2 class="mt-20 mb-5 text-center text-xl italic">Comments</h2>
+    <section class="grid grid-cols-1 md:grid-cols-3 gap-3" id="comment">
+        <div class=" py-4 px-8 shadow-lg rounded-lg" id="comment-card">
+            <div>
+                <h2 class="text-gray-800 text-2xl font-semibold">ข้อเสนอแนะ</h2>
+                <p class="mt-2 text-gray-600">ควรให้มีรสชาติที่แตกต่างจากเดิม</p>
+            </div>
+            <div class="flex justify-end mt-4">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSeoBlrV8kb5CSUreql3FpCp7C-26qlvXOt2Yq6d2RdybYRRUA/viewform"
+                    target="_blank" class="text-xl font-medium text-indigo-500">Google Form</a>
+            </div>
+        </div>
+        <div class="py-4 px-8 shadow-lg rounded-lg" id="comment-card">
+            <div>
+                <h2 class="text-gray-800 text-2xl font-semibold">ข้อเสนอแนะ</h2>
+                <p class="mt-2 text-gray-600">สีของข้าวไรซ์เบอร์รี่เหมือนกับข้าวที่ไหม้</p>
+            </div>
+            <div class="flex justify-end mt-4">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSeoBlrV8kb5CSUreql3FpCp7C-26qlvXOt2Yq6d2RdybYRRUA/viewform"
+                    target="_blank" class="text-xl font-medium text-indigo-500">Google Form</a>
+            </div>
+        </div>
+        <div class="py-4 px-8 shadow-lg rounded-lg" id="comment-card">
+            <div>
+                <h2 class="text-gray-800 text-2xl font-semibold">ข้อเสนอแนะ</h2>
+                <p class="mt-2 text-gray-600">ควรให้มีรสชาติที่แตกต่างจากเดิม</p>
+            </div>
+            <div class="flex justify-end mt-4">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSeoBlrV8kb5CSUreql3FpCp7C-26qlvXOt2Yq6d2RdybYRRUA/viewform"
+                    target="_blank" class="text-xl font-medium text-indigo-500">Google Form</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-white mt-10">
+        <div class="py-6 px-4  bg-gray-100 md:flex md:items-center md:justify-between">
+            <span class="text-sm text-slate-700 dark:text-gray-900 sm:text-center">2022 <a
+                    href="https://pickledfish.netlify.app/">PickleFIsh</a>. 2/1 NT School
+            </span>
+            <div class="flex mt-4 space-x-6 sm:justify-center md:mt-0">
+                <a href="https://www.facebook.com/21-%E0%B8%A7%E0%B8%B1%E0%B8%A2%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99%E0%B8%AD%E0%B8%B2%E0%B8%A0%E0%B8%B1%E0%B8%9E-102748929179557" 
+                target="_blank"
+                class="text-gray-900 hover:text-gray-900 dark:hover:text-blue-600">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path fill-rule="evenodd"
+                            d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
+                            clip-rule="evenodd" />
+                    </svg>
+                    <span class="sr-only">Facebook page</span>
+                </a>
+                <a href="https://www.instagram.com/is_pickled_fish" target="_blank" class="text-gray-800 hover:text-gray-900 dark:hover:text-purple-500">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path fill-rule="evenodd"
+                            d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"
+                            clip-rule="evenodd" />
+                    </svg>
+                    <span class="sr-only">Instagram page</span>
+                </a>
+               
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
